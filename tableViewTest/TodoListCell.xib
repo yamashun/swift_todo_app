@@ -26,13 +26,25 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIQ-CL-Njc">
+                        <rect key="frame" x="222" y="6" width="31" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="編集"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8it-Cl-dIC">
+                        <rect key="frame" x="273" y="6" width="31" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="削除"/>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="deleteButton" destination="8it-Cl-dIC" id="3cL-K6-Zz2"/>
+                <outlet property="editButton" destination="jIQ-CL-Njc" id="N3Y-QA-Q5g"/>
                 <outlet property="todoText" destination="3Mn-aN-493" id="Kg7-0H-78z"/>
             </connections>
-            <point key="canvasLocation" x="157.59999999999999" y="48.575712143928037"/>
+            <point key="canvasLocation" x="158" y="54"/>
         </tableViewCell>
     </objects>
 </document>

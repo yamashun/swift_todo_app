@@ -10,11 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let TODO = ["牛乳を買う", "掃除をする", "アプリ開発の勉強をする"]
+    var todoList: [String] = []
     let CellID = "cell"
     let TodoCellID = "TodoListCell"
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addButton: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: CellID)
@@ -23,19 +25,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
         tableView.delegate = self
+        
+        todoList = Storage.shared.todoList ?? []
 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TODO.count
+        return todoList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
          let cell = tableView.dequeueReusableCell(withIdentifier: TodoCellID, for: indexPath) as! TodoListCell
-        cell.todoText.text = TODO[indexPath.row]
+        cell.todoText.text = todoList[indexPath.row]
         
         return cell
+    }
+    
+    func pushAddPage(_ ボタン: UIButton) {
+        
     }
 
 

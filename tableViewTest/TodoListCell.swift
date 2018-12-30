@@ -11,6 +11,9 @@ import UIKit
 class TodoListCell: UITableViewCell {
 
     @IBOutlet weak var todoText: UILabel!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
