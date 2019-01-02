@@ -38,6 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
          let cell = tableView.dequeueReusableCell(withIdentifier: TodoCellID, for: indexPath) as! TodoListCell
         cell.todoText.text = todoList[indexPath.row]
+        cell.cellIndex = indexPath.row
         
         return cell
     }

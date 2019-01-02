@@ -35,6 +35,9 @@
                         <rect key="frame" x="273" y="6" width="31" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="削除"/>
+                        <connections>
+                            <action selector="deleteTodo:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XL4-Ks-7os"/>
+                        </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>
@@ -44,7 +47,7 @@
                 <outlet property="editButton" destination="jIQ-CL-Njc" id="N3Y-QA-Q5g"/>
                 <outlet property="todoText" destination="3Mn-aN-493" id="Kg7-0H-78z"/>
             </connections>
-            <point key="canvasLocation" x="158" y="54"/>
+            <point key="canvasLocation" x="157.59999999999999" y="53.973013493253376"/>
         </tableViewCell>
     </objects>
 </document>

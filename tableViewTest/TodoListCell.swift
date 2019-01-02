@@ -14,6 +14,13 @@ class TodoListCell: UITableViewCell {
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
+    var cellIndex: Int = 0
+    
+    @IBAction func deleteTodo(_ sender: Any) {
+        print(self.cellIndex)
+//        Storage.shared.todoList = Storage.shared.todoList.removeAtIndex(self.cellIndex)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,7 +28,6 @@ class TodoListCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
