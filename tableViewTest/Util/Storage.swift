@@ -11,9 +11,9 @@ import Foundation
 class Storage {
     static var shared = Storage()
     
-    var todoList: [String]? {
+    var todoList: [String] {
         get {
-            return UserDefaults.standard.stringArray(forKey: "todoList")
+            return UserDefaults.standard.stringArray(forKey: "todoList") ?? []
         }
         set {
             UserDefaults.standard.setValue(newValue, forKey: "todoList")

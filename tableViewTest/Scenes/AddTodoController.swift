@@ -14,7 +14,7 @@ class AddTodoController: UIViewController {
     @IBOutlet weak var todoTextField: UITextField!
     
     @IBAction func addTodoText(_ sender: Any) {
-        var addList = Storage.shared.todoList ?? []
+        var addList = Storage.shared.todoList
         addList.append(todoTextField.text!)
         Storage.shared.todoList = addList
     }
