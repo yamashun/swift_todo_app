@@ -30,6 +30,9 @@
                         <rect key="frame" x="222" y="6" width="31" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="編集"/>
+                        <connections>
+                            <action selector="editTodo:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="B62-t9-KWS"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8it-Cl-dIC">
                         <rect key="frame" x="273" y="6" width="31" height="30"/>

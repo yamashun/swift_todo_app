@@ -17,9 +17,6 @@ class TodoListCell: UITableViewCell {
     var todoCellDelegate: TodoItemUpdatable?
     var cellIndex: Int = 0
     
-    @IBAction func deleteTodo(_ sender: Any) {
-        todoCellDelegate?.deleteTodo(cell: self)
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +26,14 @@ class TodoListCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+    
+    @IBAction func deleteTodo(_ sender: Any) {
+        todoCellDelegate?.deleteTodo(cell: self)
+    }
+    
+    @IBAction func editTodo(_ sender: Any) {
+        todoCellDelegate?.editTodo(cell: self)
     }
     
 }

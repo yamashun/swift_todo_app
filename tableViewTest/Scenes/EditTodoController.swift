@@ -1,31 +1,31 @@
 //
-//  AddTodoController.swift
+//  EditTodoController.swift
 //  tableViewTest
 //
-//  Created by 山田 俊輔 on 2018/12/30.
-//  Copyright © 2018年 山田 俊輔. All rights reserved.
+//  Created by 山田 俊輔 on 2019/01/05.
+//  Copyright © 2019年 山田 俊輔. All rights reserved.
 //
 
 import UIKit
 
-class AddTodoController: UIViewController {
-
-    @IBOutlet weak var todoTextField: UITextField!
+class EditTodoController: UIViewController {
     
-    @IBAction func addTodoText(_ sender: Any) {
-        var addList = Storage.shared.todoList
-        addList.append(todoTextField.text!)
-        Storage.shared.todoList = addList
-    }
+    var todoModel = Todo(index: 0, todoText: "")
+
+    @IBOutlet weak var todoText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        todoText.text = todoModel.todoText
         // Do any additional setup after loading the view.
     }
-    
-    
 
-
+    @IBAction func updateTodo(_ sender: Any) {
+        var addList = Storage.shared.todoList
+        addList[todoModel.index] = todoText.text!
+        Storage.shared.todoList = addList
+    }
+    
     /*
     // MARK: - Navigation
 

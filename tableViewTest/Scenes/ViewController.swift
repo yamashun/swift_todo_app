@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class ViewController: UIViewController {
     
     var todoList: [String] = [] {
@@ -28,9 +26,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: CellID)
         tableView.register(UINib(nibName: TodoCellID, bundle: nil), forCellReuseIdentifier: TodoCellID)
-        // Do any additional setup after loading the view, typically from a nib.
         tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
         tableView.delegate = self
@@ -65,7 +63,15 @@ extension ViewController: TodoItemUpdatable, UITableViewDelegate, UITableViewDat
     }
     
     func editTodo(cell: TodoListCell) {
-        
+        let todoItem = Todo(index: cell.cellIndex, todoText: cell.todoText.text ?? "")
+        performSegue(withIdentifier: "toEditView", sender: todoItem)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEditView" {
+            let editController: EditTodoController = segue.destination as! EditTodoController
+            editController.todoModel = sender as! Todo
+        }
     }
 }
 

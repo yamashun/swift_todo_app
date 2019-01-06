@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Icu-87-0FI">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Icu-87-0FI" customClass="TodoListCell" customModule="tableViewTest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Icu-87-0FI" id="Ptu-ff-jjT">
@@ -44,7 +44,7 @@
                                     <navigationItem title="Todo List" id="0fl-Yu-TgT">
                                         <barButtonItem key="rightBarButtonItem" title="追加" id="Wkw-Bc-GJl">
                                             <connections>
-                                                <segue destination="tlY-b2-daf" kind="show" id="gDd-VB-ytd"/>
+                                                <segue destination="tlY-b2-daf" kind="show" identifier="toAddView" id="gDd-VB-ytd"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -57,6 +57,7 @@
                     <connections>
                         <outlet property="addButton" destination="Wkw-Bc-GJl" id="fWe-SL-zxp"/>
                         <outlet property="tableView" destination="orR-gF-Za8" id="SVp-sW-sDS"/>
+                        <segue destination="sOJ-q1-fcY" kind="show" identifier="toEditView" id="1TZ-tR-O7W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -111,5 +112,57 @@
             </objects>
             <point key="canvasLocation" x="828" y="26.53673163418291"/>
         </scene>
+        <!--Title-->
+        <scene sceneID="jYi-EY-Wg1">
+            <objects>
+                <viewController id="sOJ-q1-fcY" customClass="EditTodoController" customModule="tableViewTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q4e-ku-ffY" customClass="EditT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WXj-dZ-STe">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="erc-Ne-vKb">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="RkM-4Z-k63">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="qLX-dO-sRG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JQm-1a-iDy">
+                                <rect key="frame" x="79" y="117" width="216" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ls4-wD-0kQ">
+                                <rect key="frame" x="172" y="167" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="updateTodo:" destination="sOJ-q1-fcY" eventType="touchUpInside" id="fdB-MZ-FC6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dYm-XA-1uQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="XC1-8M-wio"/>
+                    <connections>
+                        <outlet property="todoText" destination="JQm-1a-iDy" id="y8t-CA-c6e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="puI-VP-SqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="709.60000000000002" y="836.13193403298362"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qLX-dO-sRG"/>
+    </inferredMetricsTieBreakers>
 </document>
